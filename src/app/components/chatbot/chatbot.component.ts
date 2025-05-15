@@ -24,12 +24,7 @@ export class ChatbotComponent {
   }
 
   sendMessage() {
-    if (!this.userInput.trim()) return;
-    const userText = this.userInput.trim();
-    this.messages.push({ from: 'user', text: userText });
-    const botResponse = this.chatService.getResponse(userText);
-    this.messages.push({ from: 'bot', text: botResponse });
-    this.userInput = '';
+    
   }
 
 }
