@@ -1,18 +1,27 @@
+<!-- chatbot.component.html -->
 <div class="chatbot-icon bg-warning p-3 rounded-circle text-white" (click)="toggleChat()">
-    💬
+  💬
+</div>
+
+<div class="chat-window shadow" *ngIf="isOpen">
+  <div class="chat-header bg-dark text-white p-2">
+    <span>BabyWear - Asistente</span>
+    <button class="btn-close btn-close-white float-end" (click)="toggleChat()"></button>
   </div>
-  
-  <div class="chat-window shadow" *ngIf="isOpen">
-    <div class="chat-header bg-dark text-white p-2">Pollo Pitero Bot</div>
-    <div class="chat-body p-3">
-      <div *ngFor="let msg of messages">
-        <div class="mb-2" [ngClass]="{'text-end': msg.from === 'user'}">
-          <span class="badge bg-{{ msg.from === 'user' ? 'primary' : 'secondary' }}">{{ msg.text }}</span>
-        </div>
+  <div class="chat-body p-3">
+    <div *ngFor="let msg of messages">
+      <div class="mb-2" [ngClass]="{'text-end': msg.from === 'user'}">
+        <span class="badge bg-{{ msg.from === 'user' ? 'primary' : 'secondary' }} p-2">{{ msg.text }}</span>
       </div>
     </div>
-    <div class="chat-footer input-group">
-      <input [(ngModel)]="userInput" (keydown.enter)="sendMessage()" class="form-control" placeholder="Escribe algo...">
-      <button (click)="sendMessage()" class="btn btn-primary">Enviar</button>
+  </div>
+  <div class="chat-options p-2">
+    <div class="d-grid gap-2">
+      <button *ngFor="let option of currentOptions" 
+              (click)="selectOption(option)" 
+              class="btn btn-outline-primary btn-sm text-start">
+        {{ option }}
+      </button>
     </div>
   </div>
+</div>
