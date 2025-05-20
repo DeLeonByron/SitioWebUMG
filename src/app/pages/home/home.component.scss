@@ -12,6 +12,11 @@ $modal-backdrop: rgba(0, 0, 0, 0.5);
   scroll-behavior: smooth;
 }
 
+.img-logo{
+  width: 35px;
+  height: 35px;
+}
+
 .hero-banner {
   position: relative;
   height: 100vh;
@@ -23,8 +28,17 @@ $modal-backdrop: rgba(0, 0, 0, 0.5);
   overflow: hidden;
   background: linear-gradient(270deg, #6dc7ff, #e6abff, #ffb3ba);
   background-size: 600% 600%;
-  animation: gradientMove 15s ease infinite;
+  animation: gradientMove 8s ease infinite;
 }
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  backdrop-filter: blur(2px);
+  z-index: 0;
+}
+
 
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
@@ -98,9 +112,6 @@ section {
     text-decoration: none;
     transition: color 0.3s ease;
 
-    // &:hover {
-    //   color: darken($primary-color, 10%);
-    // }
   }
 }
 
@@ -114,11 +125,6 @@ section {
     font-size: 1rem;
     font-weight: 500;
     transition: color 0.3s ease;
-
-    &:hover,
-    &.active {
-      color: $primary-color;
-    }
   }
 }
 
