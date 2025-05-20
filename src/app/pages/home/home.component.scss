@@ -1,56 +1,134 @@
-// Hero principal
+// Variables (puedes mover esto a un archivo global si usas SCSS modular)
+$primary-color: #0d6efd;
+$secondary-color: #f8f9fa;
+$accent-color: #ffc107;
+$text-color: #333;
+$light-gray: #f5f5f5;
+
+// General styles
+:host {
+  display: block;
+  scroll-behavior: smooth;
+}
+
+// Hero banner
 .hero-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/assets/images/banner.jpg') center/cover no-repeat;
-  height: 90vh;
-  padding-top: 100px;
-  background-attachment: fixed;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
   color: white;
-}
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 
-// Banner de productos
-.products-banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/assets/images/banner-productos.jpg') center/cover no-repeat;
-  height: 50vh;
-  padding: 60px 0;
-  background-attachment: fixed;
-  color: white;
-}
-
-// Animaciones suaves
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
-}
-.fade-in.delay-1 {
-  animation-delay: 0.3s;
-}
-.fade-in.delay-2 {
-  animation-delay: 0.6s;
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  h1, p {
+    animation-duration: 1s;
+    animation-fill-mode: both;
   }
 }
 
-// Cards de productos
-.product-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border-radius: 1rem;
-  overflow: hidden;
-  background-color: #fff;
-}
-.product-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+// Secciones
+section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
-// Carrusel
-.carousel-item {
-  transition: transform 0.6s ease-in-out;
+// Productos
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1rem;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  img {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+// Carousel controls
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: $primary-color;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+// About section
+#about i {
+  transition: transform 0.3s ease;
+}
+
+#about div:hover i {
+  transform: scale(1.2);
+}
+
+// Contact section
+#contact {
+  background-color: $light-gray;
+
+  a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Navbar
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: background-color 0.3s ease;
+
+  .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &.active {
+      color: $primary-color;
+    }
+  }
+}
+
+// Animaciones (usando animate.css si lo tienes instalado)
+@import 'animate.css';
+
+// Responsive
+@media (max-width: 768px) {
+  .hero-banner h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-banner p {
+    font-size: 1.1rem;
+  }
+
+  .product-card img {
+    height: 200px;
+  }
 }
