@@ -1,11 +1,12 @@
 import { Component, HostBinding, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChatbotComponent } from '../../components/chatbot/chatbot.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ChatbotComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

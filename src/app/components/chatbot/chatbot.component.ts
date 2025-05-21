@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ChatResponseService } from '../../services/chat-response.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { GoogleAnalyticsService } from '../../services/google-analytics.service';
 
 @Component({
   selector: 'app-chatbot',
@@ -17,7 +18,7 @@ export class ChatbotComponent {
   messages: { from: 'user' | 'bot'; text: string }[] = [];
   currentOptions: string[] = [];
 
-  constructor(private chatService: ChatResponseService) {}
+  constructor(private chatService: ChatResponseService, private googleAnalytics: GoogleAnalyticsService) {}
 
   toggleChat() {
     this.isOpen = !this.isOpen;
@@ -54,6 +55,15 @@ export class ChatbotComponent {
       // Actualizar opciones basadas en la categoría de la pregunta
       this.updateOptions(option);
     }, 500);
+
+     this.googleAnalytics.logEvent('conversación_iniciada_chatbot', {
+      origen: 'pagian_lili_store'
+      });
+
+        // Registrar la pregunta realizada
+      this.googleAnalytics.logEvent('chatbot_pregunta_realizada', {
+      pregunta: option
+      });
   }
   
   private updateOptions(previousQuestion: string) {
