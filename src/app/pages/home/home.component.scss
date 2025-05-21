@@ -92,8 +92,8 @@ section {
   img {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    height: 250px;
-    object-fit: cover;
+    height: 350px;
+    object-fit: contain;
   }
 
   .card-body {
