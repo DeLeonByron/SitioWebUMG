@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,46 +10,47 @@ export class ChatResponseService {
 
   private responses: { [key: string]: string } = {
     // Respuestas del menú principal
-    'información de la tienda': 'BabyWear es tu tienda especializada en ropa para bebés de 0 a 5 años. ¿Qué información específica necesitas?',
-    'políticas de envío y devoluciones': 'En BabyWear queremos que estés completamente satisfecho con tu compra. ¿Qué información necesitas sobre nuestras políticas?',
-    'métodos de pago': 'Ofrecemos diversas opciones para que realices tu pago de forma cómoda y segura. ¿Qué información específica necesitas?',
-    'cuidado de las prendas': 'Es importante cuidar bien la ropa de tu bebé para mantenerla en perfecto estado. ¿En qué puedo ayudarte?',
-    'contactar con servicio al cliente': 'Estamos disponibles para atenderte por diversos medios. ¿Cómo prefieres contactarnos?',
+    'información de productos': 'Te puedo ayudar con información sobre nuestros productos, tallas disponibles y características. ¿Qué necesitas saber?',
+    'políticas de envío y devoluciones': 'Aquí tienes toda la información sobre nuestros envíos con Forza y política de devoluciones. ¿Qué te interesa saber?',
+    'método de pago': 'Te explico cómo funciona nuestro sistema de pago contra entrega. ¿Qué información necesitas?',
+    'hablar con un vendedor': 'Te conectaré directamente con uno de nuestros vendedores para una atención personalizada.',
     
-    // Información de la tienda
-    '¿cuál es el horario?': 'Nuestras tiendas están abiertas de lunes a sábado de 10:00 a.m. a 8:00 p.m. y domingos de 11:00 a.m. a 6:00 p.m. Nuestra tienda online está disponible 24/7.',
-    '¿dónde están ubicados?': 'Nuestra tienda principal está en Av. Las Americas 6-69 Z.14 C.C. Parque las Americas, Ciudad de Guatemala. También tenemos una sucursal en Zona 10, en el Centro Comercial Oakland Mall, nivel 2.',
-    '¿hay estacionamiento?': 'Sí, ambos centros comerciales donde estamos ubicados cuentan con estacionamiento. En Parque las Americas validamos 2 horas de parqueo con tu compra.',
+    // Información de productos
+    '¿qué productos tienen?': 'Especializamos en ropa para bebés de 0 a 5 años:\n• Bodies y pijamas\n• Ropa de juego y casual\n• Accesorios (gorros, baberos, medias)\n• Ropa para ocasiones especiales\n• Conjuntos completos',
+    '¿qué tallas manejan?': 'Manejamos todas las tallas para bebés:\n• Recién nacido (0-3 meses)\n• 3-6 meses\n• 6-9 meses\n• 9-12 meses\n• 12-18 meses\n• 18-24 meses\n• 2-3 años\n• 3-4 años\n• 4-5 años',
+    '¿de qué material es la ropa?': 'Usamos solo materiales seguros y cómodos:\n• 100% algodón para bodies y pijamas\n• Mezclas de algodón suave para ropa casual\n• Todos nuestros materiales son hipoalergénicos\n• Libres de químicos dañinos',
+    '¿cómo veo el catálogo?': 'Puedes ver nuestro catálogo completo a través de WhatsApp. Nuestro vendedor te enviará fotos actualizadas con precios y disponibilidad.',
     
     // Políticas de envío y devoluciones
-    '¿cómo funcionan los envíos?': 'Realizamos envíos a todo el país a través de servicios de mensajería confiables. Una vez procesado tu pedido, recibirás un número de seguimiento para rastrear tu paquete.',
-    '¿cuál es la política de devoluciones?': 'Aceptamos devoluciones dentro de los 15 días posteriores a la compra, siempre que las prendas estén sin usar, con etiquetas y en su empaque original. Ofrecemos cambio o reembolso a tu elección.',
-    '¿cuánto tiempo tarda un envío?': 'Para la Ciudad de Guatemala, el tiempo de entrega es de 1-2 días hábiles. Para el resto del país, de 2-5 días hábiles, dependiendo de la zona.',
+    '¿cómo funcionan los envíos?': 'Trabajamos exclusivamente con Forza para todos nuestros envíos. Una vez confirmes tu pedido, coordinamos la entrega directamente contigo.',
+    '¿cuál es la política de devoluciones?': 'Aceptamos devoluciones en 7 días si:\n• La ropa tiene defectos de fábrica\n• No es la talla solicitada\n• Está sin usar y con etiquetas\nNo aceptamos devoluciones por cambio de opinión.',
+    '¿cuánto tiempo tarda un envío?': 'Con Forza los tiempos son:\n• Ciudad de Guatemala: 1-2 días\n• Departamentos: 2-4 días\n• Lugares remotos: 3-5 días',
+    '¿cuánto cuesta el envío?': 'El costo de envío con Forza varía según la zona:\n• Ciudad de Guatemala: Q15-Q25\n• Departamentos cercanos: Q25-Q35\n• Lugares remotos: Q35-Q50\nEl costo exacto se confirma al momento del pedido.',
+    '¿cómo funciona la entrega?': 'Forza te contacta para coordinar la entrega. Ellos manejan horarios flexibles y te avisan cuando van en camino.',
     
-    // Métodos de pago
-    '¿qué formas de pago aceptan?': 'Aceptamos tarjetas de crédito y débito (Visa, MasterCard, American Express), transferencias bancarias, depósitos y pago en efectivo en nuestras tiendas físicas.',
-    '¿ofrecen pago contra entrega?': 'Sí, ofrecemos pago contra entrega en la Ciudad de Guatemala y municipios aledaños. El costo adicional es de Q15.',
-    '¿tienen promociones o descuentos?': 'Sí, regularmente ofrecemos promociones especiales. Actualmente tenemos 20% de descuento en pijamas y bodies. Te recomendamos seguirnos en redes sociales para enterarte de nuestras promociones.',
+    // Método de pago
+    '¿cómo es el pago contra entrega?': 'Solo manejamos pago contra entrega en efectivo:\n• Pagas directamente al mensajero de Forza\n• Puedes revisar el producto antes de pagar\n• Llevas el cambio exacto o aproximado\n• Recibes tu factura al momento del pago',
+    '¿aceptan tarjetas o transferencias?': 'Por el momento solo aceptamos efectivo contra entrega. Esto te permite revisar el producto antes de pagar y mayor seguridad en la transacción.',
+    '¿puedo revisar antes de pagar?': 'Sí, puedes revisar que el producto sea el correcto, la talla adecuada y que esté en perfecto estado antes de realizar el pago al mensajero.',
+    '¿qué pasa si no tengo cambio exacto?': 'No hay problema, nuestros mensajeros de Forza siempre llevan cambio. Solo trata de tener un monto aproximado para facilitar la transacción.',
     
-    // Cuidado de las prendas
-    '¿cómo lavar la ropa de bebé?': 'Recomendamos lavar la ropa de bebé con agua tibia o fría, del revés, y utilizando detergentes suaves sin perfumes fuertes. Evita el uso de blanqueadores y suavizantes agresivos.',
-    '¿qué detergente recomiendan?': 'Recomendamos usar detergentes específicos para ropa de bebé, como Dreft o similares, que son suaves y están diseñados para pieles sensibles.',
-    '¿cómo quitar manchas difíciles?': 'Para manchas difíciles, recomendamos aplicar jabón neutro directamente sobre la mancha, frotar suavemente y dejar actuar por unos minutos antes de lavar normalmente. Evita los quitamanchas químicos fuertes.',
+    // Respuestas de flujo
+    'volver al menú principal': 'Perfecto, ¿en qué más puedo ayudarte hoy?',
+    'eso es todo': '¡Perfecto! Ha sido un placer ayudarte. Si tienes más preguntas, no dudes en contactarnos. ¡Que tengas un excelente día!',
+    'gracias': '¡De nada! ¿Hay algo más en lo que pueda ayudarte?',
+    'quiero hablar con alguien más': 'Te conectaré con uno de nuestros vendedores para una atención más personalizada.',
     
-    // Contactar con servicio al cliente
-    '¿cuál es el número de teléfono?': 'Nuestro número de atención al cliente es 2222-3333. Estamos disponibles de lunes a viernes de 9:00 a.m. a 6:00 p.m.',
-    '¿tienen whatsapp?': 'Sí, puedes contactarnos vía WhatsApp al 5555-6666. Te responderemos a la brevedad posible.',
-    '¿cuál es el correo de atención?': 'Puedes escribirnos a servicio@babywear.com y te responderemos en un plazo máximo de 24 horas hábiles.',
-    
-    // Otras respuestas
-    'volver al menú principal': 'Por supuesto, ¿en qué más puedo ayudarte?',
-    'gracias, eso es todo': '¡Ha sido un placer ayudarte! Si tienes más preguntas en el futuro, no dudes en contactarnos. ¡Que tengas un excelente día!',
-    'gracias': 'De nada. ¿Hay algo más en lo que pueda ayudarte?',
-    'adiós': '¡Gracias por visitar BabyWear! Esperamos verte pronto en nuestra tienda.'
+    // Respuesta por defecto mejorada
+    'default': 'No tengo información específica sobre eso, pero puedo conectarte con uno de nuestros vendedores que te ayudará personalmente. ¿Te parece bien?'
   };
 
   getResponse(question: string): string {
     const lower = question.toLowerCase();
-    return this.responses[lower] || 'No tengo información específica sobre eso en este momento. ¿Puedo ayudarte con algo más?';
+    return this.responses[lower] || this.responses['default'];
+  }
+
+  getWhatsAppLink(): string {
+    // Aquí va el link que redirecciona a WhatsApp
+    return "aca va el link que redirecciona a wsp";
   }
 }
