@@ -111,7 +111,7 @@ export class ChatbotComponent {
     }, 1200);
 
     this.googleAnalytics.logEvent('conversación_iniciada_chatbot', {
-      origen: 'pagian_lili_store'
+      origen: 'pagina_lili_store'
       });
 
         // Registrar la pregunta realizada
