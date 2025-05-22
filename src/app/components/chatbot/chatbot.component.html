@@ -1,27 +1,70 @@
-<!-- chatbot.component.html -->
-<div class="chatbot-icon bg-warning p-3 rounded-circle text-white" (click)="toggleChat()">
+
+
+<div class="chatbot-icon bg-warning p-3 rounded-circle text-white shadow" 
+     (click)="toggleChat()" 
+     [class.pulse]="!isOpen">
   💬
 </div>
 
-<div class="chat-window shadow" *ngIf="isOpen">
-  <div class="chat-header bg-dark text-white p-2">
-    <span>BabyWear - Asistente</span>
-    <button class="btn-close btn-close-white float-end" (click)="toggleChat()"></button>
+<div class="chat-window shadow-lg" *ngIf="isOpen">
+  <div class="chat-header bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <span class="fw-bold">👶 BabyWear</span>
+      <small class="ms-2 opacity-75">Asistente Virtual</small>
+    </div>
+    <button class="btn-close btn-close-white" (click)="toggleChat()"></button>
   </div>
-  <div class="chat-body p-3">
-    <div *ngFor="let msg of messages">
-      <div class="mb-2" [ngClass]="{'text-end': msg.from === 'user'}">
-        <span class="badge bg-{{ msg.from === 'user' ? 'primary' : 'secondary' }} p-2">{{ msg.text }}</span>
+  
+  <div class="chat-body p-3" #chatBody>
+    <div *ngFor="let msg of messages; let i = index" class="mb-3">
+      <div class="d-flex" [class.justify-content-end]="msg.from === 'user'">
+        <div class="message-bubble" 
+             [ngClass]="{
+               'user-message bg-primary text-white': msg.from === 'user',
+               'bot-message bg-light text-dark': msg.from === 'bot'
+             }">
+          <div class="message-content" [innerHTML]="formatMessage(msg.text)"></div>
+          <small class="message-time opacity-75 d-block mt-1">
+            {{ msg.time }}
+          </small>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Indicador de escritura cuando el bot está respondiendo -->
+    <div *ngIf="isTyping" class="d-flex mb-3">
+      <div class="bot-message bg-light text-dark">
+        <div class="typing-indicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </div>
-  <div class="chat-options p-2">
+  
+  <div class="chat-options p-3 border-top bg-light" *ngIf="currentOptions.length > 0 && !conversationEnded">
+    <small class="text-muted d-block mb-2">Selecciona una opción:</small>
     <div class="d-grid gap-2">
       <button *ngFor="let option of currentOptions" 
               (click)="selectOption(option)" 
-              class="btn btn-outline-primary btn-sm text-start">
+              class="btn btn-outline-primary btn-sm text-start d-flex align-items-center"
+              [class.btn-success]="option === 'Abrir WhatsApp'"
+              [class.text-white]="option === 'Abrir WhatsApp'">
+        <span *ngIf="option === 'Abrir WhatsApp'" class="me-2">📱</span>
+        <span *ngIf="option === 'Hablar con un vendedor'" class="me-2">👤</span>
+        <span *ngIf="option === 'Volver al menú principal'" class="me-2">🏠</span>
+        <span *ngIf="option === 'Cerrar chat'" class="me-2">❌</span>
         {{ option }}
       </button>
     </div>
+  </div>
+  
+  <!-- Mensaje final cuando la conversación termina -->
+  <div class="chat-footer p-3 bg-success text-white text-center" *ngIf="conversationEnded">
+    <small>
+      <strong>¡Gracias por contactar BabyWear!</strong><br>
+      👶 Esperamos verte pronto
+    </small>
   </div>
 </div>
