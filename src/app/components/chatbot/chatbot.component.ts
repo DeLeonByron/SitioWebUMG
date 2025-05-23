@@ -70,6 +70,11 @@ export class ChatbotComponent {
     // No permitir más interacciones si la conversación terminó
     if (this.conversationEnded) return;
 
+    // Registrar la pregunta realizada
+    this.googleAnalytics.logEvent('chatbot_pregunta_realizada', {
+    pregunta: option
+    });
+
     // Añadir la opción seleccionada como mensaje del usuario
     this.messages.push({ 
       from: 'user', 
@@ -110,14 +115,7 @@ export class ChatbotComponent {
       this.scrollToBottom();
     }, 1200);
 
-    this.googleAnalytics.logEvent('conversación_iniciada_chatbot', {
-      origen: 'pagina_lili_store'
-      });
-
-        // Registrar la pregunta realizada
-      this.googleAnalytics.logEvent('chatbot_pregunta_realizada', {
-      pregunta: option
-      });
+        
   }
 
   private redirectToWhatsApp() {
