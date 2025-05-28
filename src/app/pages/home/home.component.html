@@ -1,12 +1,14 @@
 <header class="navbar navbar-expand-lg bg-light shadow-sm fixed-top py-1">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-1" href="#">
-      <img src="assets/images/hero-bg.png" alt="Logo de Lili Store" class="img-logo" height="40">
+      <img src="assets/images/hero-bg.png" alt="Logo de Lili Store" class="img-logo">
       <span class="text-dark nav-text-lg">Lili Store</span>
     </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <nav class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link nav-text-lg active" href="#">Inicio</a></li>
@@ -14,8 +16,20 @@
         <li class="nav-item"><a class="nav-link nav-text-lg" href="#products">Productos</a></li>
         <li class="nav-item"><a class="nav-link nav-text-lg" href="#contact">Contacto</a></li>
       </ul>
+
+      <!-- Íconos solo visibles en vista móvil y tablet -->
+      <div class="d-lg-none d-flex jusstify-content-start mt-3 gap-3 w-100">
+        <a href="https://www.facebook.com/share/19RM5Vg31B/" target="_blank" class="text-dark fs-4" aria-label="Facebook">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/lilistore_ropayaccesorios?igsh=MWU0eGJ6c2lwMTI4bA==" target="_blank" class="text-dark fs-4" aria-label="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+      </div>
     </nav>
-    <div class="d-flex align-items-center ms-3 gap-3">
+
+    <!-- Íconos solo visibles en vista lg y xl -->
+    <div class="d-none d-lg-flex align-items-center ms-3 gap-3">
       <a href="https://www.facebook.com/tu_pagina" target="_blank" class="text-dark fs-4" aria-label="Facebook">
         <i class="bi bi-facebook"></i>
       </a>
@@ -25,6 +39,7 @@
     </div>
   </div>
 </header>
+
 
 
 
