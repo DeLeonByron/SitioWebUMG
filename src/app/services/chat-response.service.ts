@@ -16,9 +16,9 @@ export class ChatResponseService {
     'hablar con un vendedor': 'Te conectaré directamente con uno de nuestros vendedores para una atención personalizada.',
     
     // Información de productos
-    '¿qué productos tienen?': 'Especializamos en ropa para bebés de 0 a 5 años:\n• Bodies y pijamas\n• Ropa de juego y casual\n• Accesorios (gorros, baberos, medias)\n• Ropa para ocasiones especiales\n• Conjuntos completos',
-    '¿qué tallas manejan?': 'Manejamos todas las tallas para bebés:\n• Recién nacido (0-3 meses)\n• 3-6 meses\n• 6-9 meses\n• 9-12 meses\n• 12-18 meses\n• 18-24 meses\n• 2-3 años\n• 3-4 años\n• 4-5 años',
-    '¿de qué material es la ropa?': 'Usamos solo materiales seguros y cómodos:\n• 100% algodón para bodies y pijamas\n• Mezclas de algodón suave para ropa casual\n• Todos nuestros materiales son hipoalergénicos\n• Libres de químicos dañinos',
+    '¿qué productos tienen?': 'Especializamos en ropa para bebés de 0 a 5 años:\n• Ropa casual\n• Conjuntos completos',
+    '¿qué tallas manejan?': 'Manejamos todas las tallas para bebés:\n• Recién nacido (0-3 meses)\n• 3-6 meses\n• 6-9 meses\n• 9-12 meses\n• 12-18 meses\n• 18-24 meses\n• 2-3 años\n• 3-4 años',
+    '¿de qué material es la ropa?': 'Usamos solo materiales seguros y cómodos:\n• Mezclas de algodón suave para ropa casual\n• Libres de químicos dañinos',
     '¿cómo veo el catálogo?': 'Puedes ver nuestro catálogo completo a través de WhatsApp. Nuestro vendedor te enviará fotos actualizadas con precios y disponibilidad.',
     
     // Políticas de envío y devoluciones
@@ -29,9 +29,9 @@ export class ChatResponseService {
     '¿cómo funciona la entrega?': 'Forza te contacta para coordinar la entrega. Ellos manejan horarios flexibles y te avisan cuando van en camino.',
     
     // Método de pago
-    '¿cómo es el pago contra entrega?': 'Solo manejamos pago contra entrega en efectivo:\n• Pagas directamente al mensajero de Forza\n• Puedes revisar el producto antes de pagar\n• Llevas el cambio exacto o aproximado\n• Recibes tu factura al momento del pago',
-    '¿aceptan tarjetas o transferencias?': 'Por el momento solo aceptamos efectivo contra entrega. Esto te permite revisar el producto antes de pagar y mayor seguridad en la transacción.',
-    '¿puedo revisar antes de pagar?': 'Sí, puedes revisar que el producto sea el correcto, la talla adecuada y que esté en perfecto estado antes de realizar el pago al mensajero.',
+    '¿cómo es el pago contra entrega?': 'Solo manejamos pago contra entrega en efectivo:\n• Pagas directamente al mensajero de Forza\n• Llevas el cambio exacto o aproximado',
+    '¿aceptan tarjetas o transferencias?': 'Por el momento solo aceptamos efectivo contra entrega. Esto te permite mayor seguridad en la transacción.',
+    //'¿puedo revisar antes de pagar?': 'Sí, puedes revisar que el producto sea el correcto, la talla adecuada y que esté en perfecto estado antes de realizar el pago al mensajero.',
     '¿qué pasa si no tengo cambio exacto?': 'No hay problema, nuestros mensajeros de Forza siempre llevan cambio. Solo trata de tener un monto aproximado para facilitar la transacción.',
     
     // Respuestas de flujo
@@ -51,6 +51,6 @@ export class ChatResponseService {
 
   getWhatsAppLink(): string {
     // Aquí va el link que redirecciona a WhatsApp
-    return "aca va el link que redirecciona a wsp";
+    return "https://wa.me/39896917";
   }
 }
