@@ -23,7 +23,7 @@ export class ChatResponseService {
     
     // Políticas de envío y devoluciones
     '¿cómo funcionan los envíos?': 'Trabajamos exclusivamente con Forza para todos nuestros envíos. Una vez confirmes tu pedido, coordinamos la entrega directamente contigo.',
-    '¿cuál es la política de devoluciones?': 'Aceptamos devoluciones en 7 días si:\n• La ropa tiene defectos de fábrica\n• No es la talla solicitada\n• Está sin usar y con etiquetas\nNo aceptamos devoluciones por cambio de opinión.',
+    //'¿cuál es la política de devoluciones?': 'Aceptamos devoluciones en 7 días si:\n• La ropa tiene defectos de fábrica\n• No es la talla solicitada\n• Está sin usar y con etiquetas\nNo aceptamos devoluciones por cambio de opinión.',
     '¿cuánto tiempo tarda un envío?': 'Con Forza los tiempos son:\n• Ciudad de Guatemala: 1-2 días\n• Departamentos: 2-4 días\n• Lugares remotos: 3-5 días',
     '¿cuánto cuesta el envío?': 'El costo de envío con Forza varía según la zona:\n• Ciudad de Guatemala: Q15-Q25\n• Departamentos cercanos: Q25-Q35\n• Lugares remotos: Q35-Q50\nEl costo exacto se confirma al momento del pedido.',
     '¿cómo funciona la entrega?': 'Forza te contacta para coordinar la entrega. Ellos manejan horarios flexibles y te avisan cuando van en camino.',
