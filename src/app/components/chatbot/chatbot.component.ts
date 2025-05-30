@@ -40,7 +40,7 @@ export class ChatbotComponent {
     this.conversationEnded = false;
     this.messages.push({ 
       from: 'bot', 
-      text: '¡Hola! 👋 Soy el asistente virtual de BabyWear. Estoy aquí para ayudarte con información sobre nuestros productos y servicios. ¿En qué puedo ayudarte?',
+      text: '¡Hola! 👋 Soy el asistente virtual 👜 Lili Store. Estoy aquí para ayudarte con información sobre nuestros productos y servicios. ¿En qué puedo ayudarte?',
       time: this.getCurrentTime()
     });
     
@@ -164,7 +164,7 @@ export class ChatbotComponent {
     setTimeout(() => {
       this.messages.push({ 
         from: 'bot', 
-        text: '¡Listo! Uno de nuestros vendedores te atenderá por WhatsApp. ¡Gracias por contactar BabyWear! 👶',
+        text: '¡Listo! Uno de nuestros vendedores te atenderá por WhatsApp. ¡Gracias por contactar 👜 Lili Store! ',
         time: this.getCurrentTime()
       });
       this.conversationEnded = true;
